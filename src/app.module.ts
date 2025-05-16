@@ -9,17 +9,6 @@ import { PrismaModule } from './prisma/prisma.module';
 import { RegionModule } from './region/region.module';
 import { DistrictModule } from './district/district.module';
 import { LanguageModule } from './language/language.module';
-import { CurrencyModule } from './currency/currency.module';
-import { BrandModule } from './brand/brand.module';
-import { ModelModule } from './model/model.module';
-import { ArchivesModule } from './archives/archives.module';
-import { PhoneModule } from './phone/phone.module';
-import { AddressModule } from './address/address.module';
-import { ChatModule } from './chat/chat.module';
-import { PaymentModule } from './payment/payment.module';
-import { MessagesModule } from './messages/messages.module';
-import { AdminModule } from './admin/admin.module';
-import { FileModule } from './file/file.module';
 
 @Module({
   imports: [
@@ -28,18 +17,7 @@ import { FileModule } from './file/file.module';
     PrismaModule,
     RegionModule,
     DistrictModule,
-    LanguageModule,
-    CurrencyModule,
-    BrandModule,
-    ModelModule,
-    ArchivesModule,
-    PhoneModule,
-    AddressModule,
-    ChatModule,
-    PaymentModule,
-    MessagesModule,
-    AdminModule,
-    FileModule,
+    LanguageModule
   ],
   controllers: [],
   providers: [

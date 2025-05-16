@@ -179,127 +179,6 @@ exports.Prisma.PhoneNumberScalarFieldEnum = {
   userId: 'userId'
 };
 
-exports.Prisma.CurrencyScalarFieldEnum = {
-  id: 'id',
-  name: 'name'
-};
-
-exports.Prisma.BrandScalarFieldEnum = {
-  id: 'id',
-  name: 'name'
-};
-
-exports.Prisma.ModelScalarFieldEnum = {
-  id: 'id',
-  name: 'name',
-  brandId: 'brandId'
-};
-
-exports.Prisma.ColorScalarFieldEnum = {
-  id: 'id',
-  name: 'name'
-};
-
-exports.Prisma.PhoneScalarFieldEnum = {
-  id: 'id',
-  title: 'title',
-  description: 'description',
-  ram: 'ram',
-  rom: 'rom',
-  box_with_document: 'box_with_document',
-  is_new: 'is_new',
-  posted_date: 'posted_date',
-  views: 'views',
-  like_counts: 'like_counts',
-  is_negotiable: 'is_negotiable',
-  brand: 'brand',
-  model: 'model',
-  is_active: 'is_active',
-  is_checked: 'is_checked',
-  is_archived: 'is_archived',
-  is_deleted: 'is_deleted',
-  currencyId: 'currencyId',
-  modelId: 'modelId',
-  brandId: 'brandId',
-  colorId: 'colorId',
-  userId: 'userId'
-};
-
-exports.Prisma.ImageScalarFieldEnum = {
-  id: 'id',
-  url: 'url',
-  phoneId: 'phoneId'
-};
-
-exports.Prisma.ReviewScalarFieldEnum = {
-  id: 'id',
-  date: 'date',
-  phoneId: 'phoneId'
-};
-
-exports.Prisma.ArchivesScalarFieldEnum = {
-  id: 'id',
-  archivedAt: 'archivedAt',
-  phoneId: 'phoneId'
-};
-
-exports.Prisma.AddressScalarFieldEnum = {
-  id: 'id',
-  name: 'name',
-  address: 'address',
-  lat: 'lat',
-  long: 'long',
-  userId: 'userId',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-};
-
-exports.Prisma.PaymentScalarFieldEnum = {
-  id: 'id',
-  type: 'type',
-  amount: 'amount',
-  paid_date: 'paid_date',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt',
-  userId: 'userId'
-};
-
-exports.Prisma.ChatScalarFieldEnum = {
-  id: 'id',
-  productId: 'productId',
-  sellerId: 'sellerId',
-  buyerId: 'buyerId',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-};
-
-exports.Prisma.MessagesScalarFieldEnum = {
-  id: 'id',
-  message: 'message',
-  is_read: 'is_read',
-  sent_at: 'sent_at',
-  chatId: 'chatId',
-  senderId: 'senderId'
-};
-
-exports.Prisma.AdminScalarFieldEnum = {
-  id: 'id',
-  firstname: 'firstname',
-  lastname: 'lastname',
-  phone_number: 'phone_number',
-  hashed_password: 'hashed_password',
-  email: 'email',
-  image: 'image',
-  is_creator: 'is_creator',
-  is_active: 'is_active',
-  refresh_token: 'refresh_token',
-  last_login: 'last_login',
-  login_attempts: 'login_attempts',
-  locked_until: 'locked_until',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-};
-
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -314,11 +193,7 @@ exports.Prisma.NullsOrder = {
   first: 'first',
   last: 'last'
 };
-exports.PaymentType = exports.$Enums.PaymentType = {
-  PAYME: 'PAYME',
-  CLICK: 'CLICK',
-  PAYNET: 'PAYNET'
-};
+
 
 exports.Prisma.ModelName = {
   Region: 'Region',
@@ -326,20 +201,7 @@ exports.Prisma.ModelName = {
   Language: 'Language',
   User: 'User',
   Email: 'Email',
-  PhoneNumber: 'PhoneNumber',
-  Currency: 'Currency',
-  Brand: 'Brand',
-  Model: 'Model',
-  Color: 'Color',
-  Phone: 'Phone',
-  Image: 'Image',
-  Review: 'Review',
-  Archives: 'Archives',
-  Address: 'Address',
-  Payment: 'Payment',
-  Chat: 'Chat',
-  Messages: 'Messages',
-  Admin: 'Admin'
+  PhoneNumber: 'PhoneNumber'
 };
 
 /**
