@@ -14,6 +14,12 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum PaymentType {
+  PAYME
+  CLICK
+  PAYNET
+}
+
 model Region {
   id        Int      @id @default(autoincrement())
   name      String   @unique
@@ -76,6 +82,10 @@ model User {
   Emails       Email[]
   PhoneNumbers PhoneNumber[]
   Phones       Phone[]
+  Address      Address[]
+  Payments     Payment[]
+  Chat         Chat[]
+  Messages     Messages[]
 }
 
 model Email {
@@ -101,30 +111,6 @@ model PhoneNumber {
 
   User User[] @relation("MainPhone")
 }
-
-// enum Ram {
-//   GB_4   @map("4GB")
-//   GB_6   @map("6GB")
-//   GB_8   @map("8GB")
-//   GB_12  @map("12GB")
-//   GB_16  @map("16GB")
-//   GB_24  @map("24GB")
-//   GB_32  @map("32GB")
-//   GB_64  @map("64GB")
-//   GB_128 @map("128GB")
-// }
-
-// enum Rom {
-//   GB_4   @map("4GB")
-//   GB_6   @map("6GB")
-//   GB_8   @map("8GB")
-//   GB_12  @map("12GB")
-//   GB_16  @map("16GB")
-//   GB_24  @map("24GB")
-//   GB_32  @map("32GB")
-//   GB_64  @map("64GB")
-//   GB_128 @map("128GB")
-// }
 
 model Currency {
   id   Int    @id @default(autoincrement())
@@ -218,4 +204,67 @@ model Archives {
   phoneId Int
 
   Phone Phone @relation(fields: [phoneId], references: [id])
+}
+
+model Address {
+  id        Int      @id @default(autoincrement())
+  name      String
+  address   String
+  lat       Float
+  long      Float
+  User      User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId    Int?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Payment {
+  id        Int         @id @default(autoincrement())
+  type      PaymentType
+  amount    Decimal
+  paid_date DateTime
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+  User      User?       @relation(fields: [userId], references: [id], onDelete: SetNull)
+  userId    Int?
+}
+
+model Chat {
+  id        Int        @id @default(autoincrement())
+  productId Int?
+  sellerId  Int?
+  buyerId   Int?
+  User      User?      @relation(fields: [buyerId], references: [id], onDelete: SetNull)
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  Messages  Messages[]
+}
+
+model Messages {
+  id       Int      @id @default(autoincrement())
+  message  String
+  is_read  Boolean
+  sent_at  DateTime
+  chatId   Int?
+  senderId Int?
+  User     User?    @relation(fields: [senderId], references: [id], onDelete: SetNull)
+  Chat     Chat?    @relation(fields: [chatId], references: [id], onDelete: SetNull)
+}
+
+model Admin {
+  id              Int       @id @default(autoincrement())
+  firstname       String
+  lastname        String
+  phone_number    String    @unique
+  hashed_password String    @unique
+  email           String
+  image           String?
+  is_creator      Boolean?  @default(false)
+  is_active       Boolean   @default(false)
+  refresh_token   String?
+  last_login      DateTime?
+  login_attempts  Int?
+  locked_until    DateTime?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
 }

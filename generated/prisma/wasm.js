@@ -243,6 +243,63 @@ exports.Prisma.ArchivesScalarFieldEnum = {
   phoneId: 'phoneId'
 };
 
+exports.Prisma.AddressScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  address: 'address',
+  lat: 'lat',
+  long: 'long',
+  userId: 'userId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.PaymentScalarFieldEnum = {
+  id: 'id',
+  type: 'type',
+  amount: 'amount',
+  paid_date: 'paid_date',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  userId: 'userId'
+};
+
+exports.Prisma.ChatScalarFieldEnum = {
+  id: 'id',
+  productId: 'productId',
+  sellerId: 'sellerId',
+  buyerId: 'buyerId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.MessagesScalarFieldEnum = {
+  id: 'id',
+  message: 'message',
+  is_read: 'is_read',
+  sent_at: 'sent_at',
+  chatId: 'chatId',
+  senderId: 'senderId'
+};
+
+exports.Prisma.AdminScalarFieldEnum = {
+  id: 'id',
+  firstname: 'firstname',
+  lastname: 'lastname',
+  phone_number: 'phone_number',
+  hashed_password: 'hashed_password',
+  email: 'email',
+  image: 'image',
+  is_creator: 'is_creator',
+  is_active: 'is_active',
+  refresh_token: 'refresh_token',
+  last_login: 'last_login',
+  login_attempts: 'login_attempts',
+  locked_until: 'locked_until',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -257,7 +314,11 @@ exports.Prisma.NullsOrder = {
   first: 'first',
   last: 'last'
 };
-
+exports.PaymentType = exports.$Enums.PaymentType = {
+  PAYME: 'PAYME',
+  CLICK: 'CLICK',
+  PAYNET: 'PAYNET'
+};
 
 exports.Prisma.ModelName = {
   Region: 'Region',
@@ -273,7 +334,12 @@ exports.Prisma.ModelName = {
   Phone: 'Phone',
   Image: 'Image',
   Review: 'Review',
-  Archives: 'Archives'
+  Archives: 'Archives',
+  Address: 'Address',
+  Payment: 'Payment',
+  Chat: 'Chat',
+  Messages: 'Messages',
+  Admin: 'Admin'
 };
 
 /**
